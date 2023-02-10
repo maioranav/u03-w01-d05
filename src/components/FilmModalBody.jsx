@@ -34,17 +34,50 @@ export class FilmModalBody extends Component {
     return (
       <Modal.Body>
         <Row>
-          <Col>
+          <Col xs={12} md={6}>
             {this.state.isLoading && <Spinner animation="grow" variant="danger" />}
             {!this.state.isLoading && this.state.error && (
               <Alert key={`err-0`} variant={"danger"}>
                 {this.state.error}
               </Alert>
             )}
-            <img className="img-sheet" src={this.state.filmdata.Poster} alt={this.state.filmdata.Title} />
+            <img className="img-sheet" src={this.state.filmdata.Poster} alt={this.state.filmdata.Title} style={{ width: "100%" }} />
           </Col>
-          <Col></Col>
+          {!this.state.isLoading && !this.state.error && (
+            <Col>
+              <p>{this.state.filmdata.Plot}</p>
+              <p>
+                <strong>Genre:</strong>
+                {this.state.filmdata.Genre}
+              </p>
+              <p>
+                <strong>Duration: </strong>
+                {this.state.filmdata.Runtime}
+              </p>
+              <p>
+                <strong>Director: </strong>
+                {this.state.filmdata.Director}
+              </p>
+              <p>
+                <strong>Actors: </strong>
+                {this.state.filmdata.Actors}
+              </p>
+              <p>
+                <strong>Released: </strong>
+                {this.state.filmdata.Year}
+              </p>
+              <p>
+                <strong>Rated: </strong>
+                {this.state.filmdata.Rated}
+              </p>
+            </Col>
+          )}
         </Row>
+        {this.state.filmdata.Awards !== "N/A" && (
+          <Row>
+            <p className="text-center w-100"> {this.state.filmdata.Awards}</p>
+          </Row>
+        )}
       </Modal.Body>
     );
   }
