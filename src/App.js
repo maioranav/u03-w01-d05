@@ -4,6 +4,7 @@ import { CustomFooter } from './components/CustomFooter';
 import { Container } from 'react-bootstrap';
 import { CustomGallery } from './components/CustomGallery';
 import { GalleryHeading } from './components/GalleryHeading';
+import { AllTheGalleries } from './components/AllTheGalleries';
 
 
 
@@ -13,9 +14,7 @@ function App() {
       <CustomNav />
       <Container fluid={'xs'} className="px-4">
         <GalleryHeading />
-        <CustomGallery />
-        <CustomGallery />
-        <CustomGallery />
+        <AllTheGalleries />
         <CustomFooter />
       </Container>
     </div>
