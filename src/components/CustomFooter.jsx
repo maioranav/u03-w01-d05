@@ -1,21 +1,23 @@
+import { faInstagramSquare, faSquareFacebook, faTwitterSquare, faYoutubeSquare } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Row } from "react-bootstrap";
 
 export const CustomFooter = () => (
   <footer>
     <Row className="text-center mt-5">
-      <div className="col-6 offset-3">
+      <Col xs={6} className="offset-3">
         <Row>
-          <div className="col col-12 text-left mb-2">
-            <i className="fa fa-facebook footer-icon"></i>
-            <i className="fa fa-instagram footer-icon"></i>
-            <i className="fa fa-twitter footer-icon"></i>
-            <i className="fa fa-youtube footer-icon"></i>
-          </div>
+          <Col xs={12} className="text-left mb-2">
+            <FontAwesomeIcon icon={faSquareFacebook} className="footer-icon" />
+            <FontAwesomeIcon icon={faInstagramSquare} className="footer-icon" />
+            <FontAwesomeIcon icon={faTwitterSquare} className="footer-icon" />
+            <FontAwesomeIcon icon={faYoutubeSquare} className="footer-icon" />
+          </Col>
         </Row>
         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg 4">
           <Col>
             <Row>
-              <div className="col col-12 footer-links">
+              <Col xs={12} className="footer-links">
                 <p>
                   <a href="#" alt="footer link">
                     Audio and Subtitles
@@ -36,12 +38,12 @@ export const CustomFooter = () => (
                     Contact us
                   </a>
                 </p>
-              </div>
+              </Col>
             </Row>
           </Col>
           <Col>
             <Row>
-              <div className="col col-12 footer-links">
+              <Col xs={12} className="footer-links">
                 <p>
                   <a href="#" alt="footer link">
                     Audio Description
@@ -57,12 +59,12 @@ export const CustomFooter = () => (
                     Legal Notices
                   </a>
                 </p>
-              </div>
+              </Col>
             </Row>
           </Col>
           <Col>
             <Row>
-              <div className="col col-12 footer-links">
+              <Col xs={12} className="footer-links">
                 <p>
                   <a href="#" alt="footer link">
                     Help Center
@@ -78,12 +80,12 @@ export const CustomFooter = () => (
                     Cookie Preferences
                   </a>
                 </p>
-              </div>
+              </Col>
             </Row>
           </Col>
           <Col>
             <Row>
-              <div className="col col-12 footer-links">
+              <Col xs={12} className="footer-links">
                 <p>
                   <a href="#" alt="footer link">
                     Gift Cards
@@ -99,21 +101,23 @@ export const CustomFooter = () => (
                     Corporate Information
                   </a>
                 </p>
-              </div>
+              </Col>
             </Row>
           </Col>
         </div>
         <Row>
-          <div className="col col-12 text-left mb-2">
+          <Col xs={12} className="text-left mb-2">
             <button type="button" className="btn btn-sm footer-button rounded-0 mt-3">
               Service Code
             </button>
-          </div>
+          </Col>
         </Row>
         <Row>
-          <div className="col col-12 text-left mb-2 mt-2 copyright">© 1997-{new Date().getFullYear()} Netflix, Inc.</div>
+          <Col xs={12} className="text-left mb-2 mt-2 copyright">
+            © 1997-{new Date().getFullYear()} Netflix, Inc.
+          </Col>
         </Row>
-      </div>
+      </Col>
     </Row>
   </footer>
 );
