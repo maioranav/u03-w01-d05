@@ -87,5 +87,12 @@ footer {
 
 .xscroll {
   overflow-x: scroll;
+  overflow-y: hidden;
   flex-wrap: nowrap;
+}
+
+.img-fluid {
+  width: 80%;
+  height: auto;
+  aspect-ratio: 10/14;
 }
