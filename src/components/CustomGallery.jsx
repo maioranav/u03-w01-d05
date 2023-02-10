@@ -21,7 +21,12 @@ export class CustomGallery extends Component {
         this.setState({ ...this.state, error: queryJson.Error, isLoading: false });
       } else {
         let { Search: films } = await queryJson;
-        this.setState({ ...this.state, films, isLoading: false });
+        if (films.length > this.props.limit) {
+          for (let i = 0; this.props.limit < films.length; i++) {
+            films.pop();
+          }
+        }
+        await this.setState({ ...this.state, films, isLoading: false });
       }
     } catch (err) {
       this.handleFetchError(err);
