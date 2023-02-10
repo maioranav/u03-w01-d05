@@ -1,12 +1,13 @@
 import { faBell, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Nav, Navbar } from "react-bootstrap";
 
 export const CustomNav = () => (
-  <nav className="navbar navbar-expand-lg navbar-dark">
-    <a className="navbar-brand" href="#">
-      <img src="assets/logo.png" />
+  <Navbar expand={"lg"} className="navbar-dark">
+    <a className="navbar-brand" href="#" alt="Netflix Homepage">
+      <img src="assets/logo.png" alt="Logo Neflix" />
     </a>
-    <button
+    <Navbar.Toggle
       className="navbar-toggler"
       type="button"
       data-toggle="collapse"
@@ -16,40 +17,41 @@ export const CustomNav = () => (
       aria-label="Toggle navigation"
     >
       <span className="navbar-toggler-icon"></span>
-    </button>
+    </Navbar.Toggle>
 
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item">
-          <a className="nav-link font-weight-bold" href="#">
+    <Navbar.Collapse id="navbarSupportedContent">
+      <Nav className="navbar-nav mr-auto">
+        <Nav.Item>
+          <Nav.Link className="font-weight-bold" href="#">
             Home <span className="sr-only">(current)</span>
-          </a>
-        </li>
-        <li className="nav-item active">
-          <a className="nav-link font-weight-bold" href="#">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item className="active">
+          <Nav.Link className="font-weight-bold" href="#">
             TV Shows
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link font-weight-bold" href="#">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className="font-weight-bold" href="#">
             Movies
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link font-weight-bold" href="#">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className="font-weight-bold" href="#">
             Recently Added
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link font-weight-bold" href="#">
+          </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link className="font-weight-bold" href="#">
             My List
-          </a>
-        </li>
-      </ul>
+          </Nav.Link>
+        </Nav.Item>
+      </Nav>
+
       <FontAwesomeIcon icon={faSearch} className="icons" />
       <div id="kids">KIDS</div>
       <FontAwesomeIcon icon={faBell} className="icons" />
       <FontAwesomeIcon icon={faUser} className="icons" />
-    </div>
-  </nav>
+    </Navbar.Collapse>
+  </Navbar>
 );
