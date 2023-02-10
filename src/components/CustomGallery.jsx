@@ -1,4 +1,5 @@
 import { Component } from "react";
+import { Alert, Spinner } from "react-bootstrap";
 import { SingleGalleryMovie } from "./SingleGalleryMovie";
 
 export class CustomGallery extends Component {
@@ -8,14 +9,22 @@ export class CustomGallery extends Component {
     error: false,
   };
 
+  handleFetchError = (err) => {
+    this.setState({ ...this.state, error: `${err}`, isLoading: false });
+  };
+
   fetchByQuery = async (query) => {
     try {
       let queryResult = await fetch(process.env.REACT_APP_OMDBBASEURL + `?&s=${query}` + `&apikey=${process.env.REACT_APP_OMDBTOKEN}`);
-      let { Search: films } = await queryResult.json();
-
-      this.setState({ ...this.state, films });
-    } catch (e) {
-      alert(e);
+      let queryJson = await queryResult.json();
+      if (queryJson.Response === "False") {
+        this.setState({ ...this.state, error: queryJson.Error, isLoading: false });
+      } else {
+        let { Search: films } = await queryJson;
+        this.setState({ ...this.state, films, isLoading: false });
+      }
+    } catch (err) {
+      this.handleFetchError(err);
     }
   };
 
@@ -27,10 +36,14 @@ export class CustomGallery extends Component {
     return (
       <>
         <h4>Perchè hai cercato: {this.props.title}</h4>
+        {this.state.isLoading && <Spinner animation="grow" variant="danger" className="mt-5" />}
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4 row-cols-xl-6 mb-4 no-gutters text-center xscroll">
-          {this.state.films.map((film) => (
-            <SingleGalleryMovie {...film} key={film.imdbID} />
-          ))}
+          {!this.state.isLoading && this.state.error && (
+            <Alert key={`err-0`} variant={"danger"}>
+              {this.state.error}
+            </Alert>
+          )}
+          {!this.state.error && !this.state.isLoading && this.state.films.map((film) => <SingleGalleryMovie {...film} key={film.imdbID} />)}
         </div>
       </>
     );
