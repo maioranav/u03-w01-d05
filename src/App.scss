@@ -82,3 +82,10 @@ footer {
 .col img:hover {
   transform: scale(1.1);
 }
+
+// customs
+
+.xscroll {
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
