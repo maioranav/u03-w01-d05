@@ -1,3 +1,6 @@
+import { faBell, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export const CustomNav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark">
     <a className="navbar-brand" href="#">
@@ -43,10 +46,10 @@ export const CustomNav = () => (
           </a>
         </li>
       </ul>
-      <i className="fa fa-search icons"></i>
+      <FontAwesomeIcon icon={faSearch} className="icons" />
       <div id="kids">KIDS</div>
-      <i className="fa fa-bell icons"></i>
-      <i className="fa fa-user icons"></i>
+      <FontAwesomeIcon icon={faBell} className="icons" />
+      <FontAwesomeIcon icon={faUser} className="icons" />
     </div>
   </nav>
 );
