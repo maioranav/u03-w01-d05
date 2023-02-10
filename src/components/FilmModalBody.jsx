@@ -12,7 +12,7 @@ export class FilmModalBody extends Component {
     this.setState({ ...this.state, error: `${err}`, isLoading: false });
   };
 
-  fetchByQuery = async (query) => {
+  fetchByID = async (query) => {
     try {
       let queryResult = await fetch(process.env.REACT_APP_OMDBBASEURL + `?&i=${query}` + `&apikey=${process.env.REACT_APP_OMDBTOKEN}`);
       let queryJson = await queryResult.json();
@@ -27,7 +27,7 @@ export class FilmModalBody extends Component {
   };
 
   componentDidMount() {
-    this.fetchByQuery(this.props.filmid);
+    this.fetchByID(this.props.filmid);
   }
 
   render() {
