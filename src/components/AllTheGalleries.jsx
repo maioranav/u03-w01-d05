@@ -3,14 +3,15 @@ import { CustomGallery } from "./CustomGallery";
 
 export class AllTheGalleries extends Component {
   state = {
-    genres: ["Trending Now", "Watch it Again", "New Releases"],
+    queries: ["Harry Potter", "Breaking Bad", "Friends"],
   };
+
   render() {
     return (
       <>
-        <CustomGallery title={this.state.genres[0]} />
-        <CustomGallery title={this.state.genres[1]} />
-        <CustomGallery title={this.state.genres[2]} />
+        {this.state.queries.map((el, i) => (
+          <CustomGallery title={el} key={`search-${i}`} />
+        ))}
       </>
     );
   }
