@@ -15,7 +15,7 @@ export class CustomGallery extends Component {
 
   fetchByQuery = async (query) => {
     try {
-      let queryResult = await fetch(process.env.REACT_APP_OMDBBASEURL + `?&s=${query}` + `&apikey=${process.env.REACT_APP_OMDBTOKEN}`);
+      let queryResult = await fetch(process.env.REACT_APP_OMDBBASEURL + `?&s=${query}&apikey=${process.env.REACT_APP_OMDBTOKEN}`);
       let queryJson = await queryResult.json();
       if (queryJson.Response === "False") {
         this.setState({ ...this.state, error: queryJson.Error, isLoading: false });

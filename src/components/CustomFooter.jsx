@@ -19,22 +19,22 @@ export const CustomFooter = () => (
             <Row>
               <Col xs={12} className="footer-links">
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Audio and Subtitles
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Media Center
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Privacy
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Contact us
                   </a>
                 </p>
@@ -45,17 +45,17 @@ export const CustomFooter = () => (
             <Row>
               <Col xs={12} className="footer-links">
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Audio Description
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Investor Relations
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Legal Notices
                   </a>
                 </p>
@@ -66,17 +66,17 @@ export const CustomFooter = () => (
             <Row>
               <Col xs={12} className="footer-links">
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Help Center
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Jobs
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Cookie Preferences
                   </a>
                 </p>
@@ -87,17 +87,17 @@ export const CustomFooter = () => (
             <Row>
               <Col xs={12} className="footer-links">
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Gift Cards
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Terms of Use
                   </a>
                 </p>
                 <p>
-                  <a href="#" alt="footer link">
+                  <a href alt="footer link">
                     Corporate Information
                   </a>
                 </p>

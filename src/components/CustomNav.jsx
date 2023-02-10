@@ -4,7 +4,7 @@ import { Nav, Navbar } from "react-bootstrap";
 
 export const CustomNav = () => (
   <Navbar expand={"lg"} className="navbar-dark">
-    <a className="navbar-brand" href="#" alt="Netflix Homepage">
+    <a className="navbar-brand" href alt="Netflix Homepage">
       <img src="assets/logo.png" alt="Logo Neflix" />
     </a>
     <Navbar.Toggle
@@ -22,29 +22,21 @@ export const CustomNav = () => (
     <Navbar.Collapse id="navbarSupportedContent">
       <Nav className="navbar-nav mr-auto">
         <Nav.Item>
-          <Nav.Link className="font-weight-bold" href="#">
+          <Nav.Link className="font-weight-bold">
             Home <span className="sr-only">(current)</span>
           </Nav.Link>
         </Nav.Item>
         <Nav.Item className="active">
-          <Nav.Link className="font-weight-bold" href="#">
-            TV Shows
-          </Nav.Link>
+          <Nav.Link className="font-weight-bold">TV Shows</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="font-weight-bold" href="#">
-            Movies
-          </Nav.Link>
+          <Nav.Link className="font-weight-bold">Movies</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="font-weight-bold" href="#">
-            Recently Added
-          </Nav.Link>
+          <Nav.Link className="font-weight-bold">Recently Added</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link className="font-weight-bold" href="#">
-            My List
-          </Nav.Link>
+          <Nav.Link className="font-weight-bold">My List</Nav.Link>
         </Nav.Item>
       </Nav>
 
