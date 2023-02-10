@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button, Col, Modal, Row } from "react-bootstrap";
+import { Button, Col, Modal } from "react-bootstrap";
 import { FilmModalBody } from "./FilmModalBody";
 
 export class SingleGalleryMovie extends Component {
@@ -20,7 +20,9 @@ export class SingleGalleryMovie extends Component {
 
         <Modal show={this.state.show} onHide={() => this.handleModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>{this.props.Title}</Modal.Title>
+            <Modal.Title>
+              {this.props.Title} <span className="filmtype">{this.props.Type}</span>
+            </Modal.Title>
           </Modal.Header>
           {this.state.show && <FilmModalBody filmid={this.props.imdbID} />}
           <Modal.Footer>

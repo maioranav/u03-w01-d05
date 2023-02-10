@@ -96,3 +96,11 @@ footer {
   height: auto;
   aspect-ratio: 10/14;
 }
+
+.filmtype {
+  background-color: $primary;
+  color: $light;
+  font-size: 1rem;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
