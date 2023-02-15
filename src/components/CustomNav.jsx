@@ -37,13 +37,15 @@ export const CustomNav = () => {
               TV Shows
             </Link>
           </Nav.Item>
-          <Nav.Item className={location.pathname === "/brokenpage" ? "active" : ""}>
-            <Link className="nav-link font-weight-bold" to="/brokenpage">
+          <Nav.Item className={location.pathname.startsWith("/movie") ? "active" : ""}>
+            <Link className="nav-link font-weight-bold" to="/movies/857340985734590754">
               Movies
             </Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="font-weight-bold">Recently Added</Nav.Link>
+          <Nav.Item className={location.pathname === "/recent" ? "active" : ""}>
+            <Link className="nav-link font-weight-bold" to="/recent">
+              Recently Added
+            </Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link className="font-weight-bold">My List</Nav.Link>
