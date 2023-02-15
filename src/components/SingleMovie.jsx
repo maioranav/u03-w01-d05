@@ -1,9 +1,11 @@
 import { Alert, Col, Row, Spinner, Container, Badge } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { CommentArea } from "./CommentArea";
 
 export const SingleMovie = (props) => {
   const params = useParams();
+  const navigate = useNavigate();
 
   const [state, setState] = useState({
     isLoading: true,
@@ -21,6 +23,7 @@ export const SingleMovie = (props) => {
       let queryJson = await queryResult.json();
       if (queryJson.Response === "False") {
         setState({ ...state, error: queryJson.Error, isLoading: false });
+        navigate("/notfound");
       } else {
         setState({ ...state, filmdata: queryJson, isLoading: false });
       }
@@ -35,11 +38,13 @@ export const SingleMovie = (props) => {
 
   return (
     <Container className="singleFilm">
-      <Row>
-        <h2 className="text-center w-100 mb-3">
-          {state.filmdata.Title} <Badge variant="primary">{state.filmdata.Type}</Badge>
-        </h2>
-      </Row>
+      {!state.isLoading && !state.error && (
+        <Row>
+          <h2 className="text-center w-100 mb-5">
+            {state.filmdata.Title} <Badge variant="primary">{state.filmdata.Type}</Badge>
+          </h2>
+        </Row>
+      )}
       <Row>
         <Col xs={12} md={6} className="d-flex justify-content-center">
           {state.isLoading && <Spinner animation="grow" variant="danger" />}
@@ -81,6 +86,7 @@ export const SingleMovie = (props) => {
           </Col>
         )}
       </Row>
+      {!state.isLoading && !state.error && <CommentArea filmid={params.movieID} />}
     </Container>
   );
 };

@@ -6,6 +6,7 @@ import { GalleryHeading } from './components/GalleryHeading';
 import { AllTheGalleries } from './components/AllTheGalleries';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import { SingleMovie } from './components/SingleMovie';
+import { NotFound } from './components/NotFound';
 
 
 
@@ -17,10 +18,10 @@ function App() {
         <Container fluid={'xs'} className="px-4">
           <GalleryHeading />
           <Routes>
-            <Route path="/" element={<h2>Fai qualcosa</h2>} />
+            <Route path="/" element={<AllTheGalleries />} />
             <Route path="/tv-shows" element={<AllTheGalleries />} />
             <Route path="/movie/:movieID" element={<SingleMovie />} />
-            <Route path="*" element={<h2>Fai qualcosa</h2>} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
           <CustomFooter />
         </Container>
