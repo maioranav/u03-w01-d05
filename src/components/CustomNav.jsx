@@ -38,7 +38,7 @@ export const CustomNav = () => {
             </Link>
           </Nav.Item>
           <Nav.Item className={location.pathname.startsWith("/movie") ? "active" : ""}>
-            <Link className="nav-link font-weight-bold" to="/movies/857340985734590754">
+            <Link className="nav-link font-weight-bold" to="/movie/857340985734590754">
               Movies
             </Link>
           </Nav.Item>
