@@ -16,7 +16,7 @@ function App() {
       <BrowserRouter>
         <CustomNav />
         <Container fluid={'xs'} className="px-4">
-          <GalleryHeading />
+
           <Routes>
             <Route path="/" element={<AllTheGalleries />} />
             <Route path="/tv-shows" element={<AllTheGalleries />} />

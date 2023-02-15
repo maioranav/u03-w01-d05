@@ -1,5 +1,6 @@
 import { Component, useState } from "react";
 import { CustomGallery } from "./CustomGallery";
+import { GalleryHeading } from "./GalleryHeading";
 
 export const AllTheGalleries = (props) => {
   const [state, setState] = useState({
@@ -9,6 +10,7 @@ export const AllTheGalleries = (props) => {
 
   return (
     <>
+      <GalleryHeading />
       {state.queries.map((el, i) => (
         <CustomGallery title={el} key={`search-${i}`} limit={state.limit} />
       ))}
