@@ -107,3 +107,13 @@ footer {
 footer a {
   cursor: pointer;
 }
+
+.singleFilm {
+  color: white;
+  padding: 20px;
+  img {
+    height: 50vh;
+    aspect-ratio: 10/14;
+    width: unset !important;
+  }
+}

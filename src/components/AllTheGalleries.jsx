@@ -1,19 +1,17 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import { CustomGallery } from "./CustomGallery";
 
-export class AllTheGalleries extends Component {
-  state = {
+export const AllTheGalleries = (props) => {
+  const [state, setState] = useState({
     queries: ["Harry Potter", "Breaking Bad", "Friends"],
     limit: 6,
-  };
+  });
 
-  render() {
-    return (
-      <>
-        {this.state.queries.map((el, i) => (
-          <CustomGallery title={el} key={`search-${i}`} limit={this.state.limit} />
-        ))}
-      </>
-    );
-  }
-}
+  return (
+    <>
+      {state.queries.map((el, i) => (
+        <CustomGallery title={el} key={`search-${i}`} limit={state.limit} />
+      ))}
+    </>
+  );
+};
