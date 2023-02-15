@@ -2,9 +2,11 @@ import { faBell, faSearch, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 export const CustomNav = () => {
   const location = useLocation();
+  const [searchBar, showSearchbar] = useState(false);
 
   return (
     <Navbar expand={"lg"} className="navbar-dark">
@@ -35,8 +37,10 @@ export const CustomNav = () => {
               TV Shows
             </Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link className="font-weight-bold">Movies</Nav.Link>
+          <Nav.Item className={location.pathname === "/brokenpage" ? "active" : ""}>
+            <Link className="nav-link font-weight-bold" to="/brokenpage">
+              Movies
+            </Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link className="font-weight-bold">Recently Added</Nav.Link>
@@ -46,7 +50,18 @@ export const CustomNav = () => {
           </Nav.Item>
         </Nav>
 
-        <FontAwesomeIcon icon={faSearch} className="icons" />
+        <div className={searchBar ? "search active" : "search"}>
+          <input type="text" className="input" placeholder={location.pathname === "/tv-shows" ? "Cerca Serie TV" : "Cerca qualcosa..."} />
+          <button
+            className="btn"
+            onClick={() => {
+              showSearchbar(!searchBar);
+            }}
+          >
+            <FontAwesomeIcon icon={faSearch} className="icons" />
+          </button>
+        </div>
+
         <div id="kids">KIDS</div>
         <FontAwesomeIcon icon={faBell} className="icons" />
         <FontAwesomeIcon icon={faUser} className="icons" />
